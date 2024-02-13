@@ -19,10 +19,10 @@ app.add_middleware(
 
 
 VIDEO_DIR = Path(
-    "/Users/asilbekturgunboev/Desktop/video_conversion/converted_videos/")
+    "/var/www/video_conversion/converted_videos/")
 
 
-@app.get("/videos/{video_id:uuid}/{video_path:path}")
+@app.get("/playbackservice/videos/{video_id:uuid}/{video_path:path}")
 def read_video(video_id: UUID, video_path: str):
     file_location = VIDEO_DIR / str(video_id) / video_path
     print(f"Trying to access file at: {file_location}")
